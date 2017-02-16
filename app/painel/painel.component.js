@@ -9,25 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var FotoComponent = (function () {
-    function FotoComponent() {
+var PainelComponente = (function () {
+    function PainelComponente() {
     }
-    return FotoComponent;
+    return PainelComponente;
 }());
 __decorate([
     core_1.Input(),
-    __metadata("design:type", Object)
-], FotoComponent.prototype, "titulo", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], FotoComponent.prototype, "url", void 0);
-FotoComponent = __decorate([
+    __metadata("design:type", String)
+], PainelComponente.prototype, "titulo", void 0);
+PainelComponente = __decorate([
     core_1.Component({
-        selector: 'foto',
-        templateUrl: './foto.component.html',
-        moduleId: module.id
+        moduleId: module.id,
+        selector: 'painel',
+        templateUrl: './painel.component.html'
     })
-], FotoComponent);
-exports.FotoComponent = FotoComponent;
-//# sourceMappingURL=foto.component.js.map
+], PainelComponente);
+exports.PainelComponente = PainelComponente;
+//# sourceMappingURL=painel.component.js.map

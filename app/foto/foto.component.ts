@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Input} from "@angular/core";
 
 @Component({
     selector: 'foto',
@@ -6,5 +6,8 @@ import {Component} from "@angular/core";
     moduleId: module.id
 })
 export class FotoComponent {
+
+    @Input() titulo;
+    @Input() url;
 
 }

@@ -9,25 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var FotoComponent = (function () {
-    function FotoComponent() {
+var http_1 = require("@angular/http");
+var ListagemComponent = (function () {
+    function ListagemComponent(http) {
+        /* RXjs com AeroFuncion */
+        var _this = this;
+        this.fotos = [];
+        http.get('v1/fotos')
+            .map(function (res) { return res.json(); })
+            .subscribe(function (fotos) {
+            _this.fotos = fotos;
+        }, function (erro) { return console.log(erro); });
     }
-    return FotoComponent;
+    return ListagemComponent;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], FotoComponent.prototype, "titulo", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], FotoComponent.prototype, "url", void 0);
-FotoComponent = __decorate([
+ListagemComponent = __decorate([
     core_1.Component({
-        selector: 'foto',
-        templateUrl: './foto.component.html',
-        moduleId: module.id
-    })
-], FotoComponent);
-exports.FotoComponent = FotoComponent;
-//# sourceMappingURL=foto.component.js.map
+        moduleId: module.id,
+        selector: 'listagem',
+        templateUrl: './listagem.component.html'
+    }),
+    __metadata("design:paramtypes", [http_1.Http])
+], ListagemComponent);
+exports.ListagemComponent = ListagemComponent;
+//# sourceMappingURL=listagem.component.js.map
