@@ -26,7 +26,8 @@ FotoComponent = __decorate([
     core_1.Component({
         selector: 'foto',
         templateUrl: './foto.component.html',
-        moduleId: module.id
+        moduleId: module.id,
+        styleUrls: ['./foto.component.css']
     })
 ], FotoComponent);
 exports.FotoComponent = FotoComponent;
