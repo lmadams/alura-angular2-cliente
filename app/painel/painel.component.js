@@ -12,6 +12,12 @@ var core_1 = require("@angular/core");
 var PainelComponente = (function () {
     function PainelComponente() {
     }
+    PainelComponente.prototype.ngOnInit = function () {
+        this.titulo =
+            this.titulo.length > 7 ?
+                this.titulo.substr(0, 7) + '...' :
+                this.titulo;
+    };
     return PainelComponente;
 }());
 __decorate([

@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var platform_browser_1 = require("@angular/platform-browser");
+var forms_1 = require("@angular/forms");
 var foto_module_1 = require("./foto/foto.module");
 var painel_module_1 = require("./painel/painel.module");
 var app_component_1 = require("./app.component");
@@ -27,7 +28,9 @@ AppModule = __decorate([
             foto_module_1.FotoModule,
             http_1.HttpModule,
             painel_module_1.PainelModule,
-            app_routes_1.routing
+            app_routes_1.routing,
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule
         ],
         declarations: [app_component_1.AppComponent, cadastro_component_1.CadastroComponent, listagem_component_1.ListagemComponent],
         bootstrap: [app_component_1.AppComponent]
