@@ -10,13 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var PainelComponente = (function () {
-    function PainelComponente() {
+    function PainelComponente(elemento) {
+        this.elemento = elemento;
     }
     PainelComponente.prototype.ngOnInit = function () {
         this.titulo =
             this.titulo.length > 7 ?
                 this.titulo.substr(0, 7) + '...' :
                 this.titulo;
+    };
+    PainelComponente.prototype.fadeOut = function (callback) {
+        $(this.elemento.nativeElement).fadeOut(callback);
     };
     return PainelComponente;
 }());
@@ -30,7 +34,8 @@ PainelComponente = __decorate([
         selector: 'painel',
         templateUrl: './painel.component.html',
         styleUrls: ['./painel.component.css']
-    })
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
 ], PainelComponente);
 exports.PainelComponente = PainelComponente;
 //# sourceMappingURL=painel.component.js.map
