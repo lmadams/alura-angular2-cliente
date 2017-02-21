@@ -14,11 +14,23 @@ var ListagemComponent = (function () {
     function ListagemComponent(service) {
         var _this = this;
         this.fotos = [];
-        service.lista()
+        this.service = service;
+        this.service.lista()
             .subscribe(function (fotos) {
             _this.fotos = fotos;
         }, function (erro) { return console.log(erro); });
     }
+    ListagemComponent.prototype.remove = function (foto) {
+        var _this = this;
+        this.service
+            .remove(foto)
+            .subscribe(function () {
+            var novasFotos = _this.fotos.slice(0);
+            var indice = novasFotos.indexOf(foto);
+            novasFotos.splice(indice, 1);
+            _this.fotos = novasFotos;
+        }, function (erro) { return console.log(erro); });
+    };
     return ListagemComponent;
 }());
 ListagemComponent = __decorate([
